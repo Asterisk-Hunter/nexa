@@ -6,30 +6,30 @@ import { openContactModal } from '@/lib/contact';
 const plans = [
     {
         name: 'Starter',
-        price: 'From $3.5k',
-        description: 'For small teams getting their first real presence.',
-        features: ['One landing page', 'Clean layout & basic motion', 'Mobile-ready', 'Delivered in 7 days'],
+        price: '$1,000',
+        description: 'Perfect for small businesses needing a professional online presence.',
+        features: ['One-page website', 'Modern, clean design', 'Mobile responsive', 'Delivered in 5-7 days', 'Basic SEO setup'],
         gradient: 'from-blue-500/20 to-cyan-500/20',
-        border: 'group-hover:border-neon-cyan/50',
+        border: 'group-hover:border-blue-400/50',
         icon: Zap
     },
     {
         name: 'Growth',
-        price: 'From $8.5k',
-        description: 'For teams ready to scale their brand.',
-        features: ['Multi-page site', 'Strong visual identity', 'Advanced motion', 'Delivery in 2-3 weeks'],
+        price: '$1,500',
+        description: 'For businesses ready to scale with a multi-page site.',
+        features: ['Up to 5 pages', 'Custom design & branding', 'Contact forms', 'Delivered in 2 weeks', 'Full SEO optimization'],
         gradient: 'from-purple-500/20 to-pink-500/20',
-        border: 'group-hover:border-neon-purple/50',
+        border: 'group-hover:border-purple-400/50',
         icon: Sparkles,
         popular: true
     },
     {
-        name: 'Premium',
-        price: 'Custom',
-        description: 'For brands that need a flagship-level presence.',
-        features: ['Full custom redesign', 'Complex visuals & motion', 'Priority delivery', 'Delivery in 3-4 weeks'],
-        gradient: 'from-amber-500/20 to-orange-500/20',
-        border: 'group-hover:border-amber-500/50',
+        name: 'Maintenance',
+        price: '$100/mo',
+        description: 'Keep your site updated, secure, and running smoothly.',
+        features: ['Monthly updates', 'Security monitoring', 'Performance optimization', 'Content updates', 'Priority support'],
+        gradient: 'from-emerald-500/20 to-teal-500/20',
+        border: 'group-hover:border-emerald-400/50',
         icon: Globe
     }
 ];

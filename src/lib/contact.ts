@@ -1,14 +1,16 @@
 // Contact modal management utility
 
-export type ContactSource = 
-  | 'nav' 
-  | 'hero' 
-  | 'pricing-starter' 
-  | 'pricing-growth' 
-  | 'pricing-partner' 
-  | 'cta' 
+export type ContactSource =
+  | 'nav'
+  | 'hero'
+  | 'hero-primary'
+  | 'pricing-starter'
+  | 'pricing-growth'
+  | 'pricing-partner'
+  | 'cta'
   | 'footer'
   | 'keyboard'
+  | 'contact-page'
   | 'unknown';
 
 // This will be enhanced with a global state manager (Zustand/Jotai) or context

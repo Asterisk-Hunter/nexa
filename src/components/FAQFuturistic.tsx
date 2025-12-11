@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -19,13 +19,27 @@ const faqs: FAQItem[] = [
     },
     {
         question: "Can you integrate with existing tech stacks?",
-        answer: "Absolutely. Our systems are agnostic. We build modular React components that can plug into Next.js, Remix, or proprietary architectures seamlessy."
+        answer: "Absolutely. Our systems are agnostic. We build modular React components that can plug into Next.js, Remix, or proprietary architectures seamlessly."
     },
     {
-        question: "What is the typical timeline for a 'Future-Grade' project?",
-        answer: "Excellence takes time, but our proprietary 'Velocity' framework allows us to deliver MVP results in 4-6 weeks, with full immersive experiences maturing in 8-12 weeks."
+        question: "What is the typical timeline for a project?",
+        answer: "Our proprietary 'Velocity' framework allows us to deliver MVP results in 4-6 weeks, with full immersive experiences maturing in 8-12 weeks."
     }
 ];
+
+// Generate FAQ Schema JSON-LD
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+};
 
 export default function FAQFuturistic() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -34,8 +48,27 @@ export default function FAQFuturistic() {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    // Inject FAQ Schema JSON-LD
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'faq-schema';
+        script.textContent = JSON.stringify(faqSchema);
+
+        // Remove existing if present
+        const existing = document.getElementById('faq-schema');
+        if (existing) existing.remove();
+
+        document.head.appendChild(script);
+
+        return () => {
+            const el = document.getElementById('faq-schema');
+            if (el) el.remove();
+        };
+    }, []);
+
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section id="faq" aria-labelledby="faq-heading" className="py-24 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-space-950 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/5 rounded-full blur-[100px]" />
@@ -44,15 +77,15 @@ export default function FAQFuturistic() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-                        Critical <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Data</span>
+                    <h2 id="faq-heading" className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+                        Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Questions</span>
                     </h2>
                     <p className="text-slate-400 max-w-xl mx-auto">
-                        Decrypted answers to your most frequent queries.
+                        Answers to common questions about our process and services.
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto space-y-4">
+                <div className="max-w-3xl mx-auto space-y-4" role="list">
                     {faqs.map((faq, index) => (
                         <div
                             key={index}

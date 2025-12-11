@@ -12,6 +12,7 @@ export default function Portfolio() {
       category: 'Fintech Platform',
       description: 'Revolutionary banking experience with AI-powered insights',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      alt: 'NeoBank fintech platform dashboard showing data visualizations and financial analytics',
       tags: ['UI/UX', 'Development', 'AI'],
     },
     {
@@ -19,6 +20,7 @@ export default function Portfolio() {
       category: 'E-Commerce',
       description: 'Next-gen shopping platform with immersive 3D product views',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      alt: 'Aurora e-commerce platform interface displaying product catalog with modern design',
       tags: ['3D', 'WebGL', 'React'],
     },
     {
@@ -26,6 +28,7 @@ export default function Portfolio() {
       category: 'SaaS Product',
       description: 'AI-driven productivity tool for modern teams',
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
+      alt: 'MindFlow SaaS productivity dashboard with task management and team collaboration features',
       tags: ['UI/UX', 'AI', 'Cloud'],
     },
     {
@@ -33,6 +36,7 @@ export default function Portfolio() {
       category: 'Mobile App',
       description: 'Fitness tracking with real-time motion analysis',
       image: 'https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?w=800&q=80',
+      alt: 'Velocity fitness tracking mobile app interface showing workout analytics and progress charts',
       tags: ['Mobile', 'ML', 'Health'],
     },
   ];
@@ -72,9 +76,11 @@ export default function Portfolio() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={project.alt}
                       loading="lazy"
                       decoding="async"
+                      width={800}
+                      height={600}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />

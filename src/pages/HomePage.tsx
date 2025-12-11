@@ -11,10 +11,12 @@ import TestimonialsPremium from '@/components/TestimonialsPremium';
 import CTA from '@/components/CTA';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import FAQFuturistic from '@/components/FAQFuturistic';
+import SEOHead from '@/components/SEOHead';
 
 export default function HomePage() {
     return (
         <>
+            <SEOHead />{/* Uses default homepage meta tags */}
             <HeroPremium />
             <SocialProof />
             <AboutFuturistic />

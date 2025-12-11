@@ -4,34 +4,34 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "The interface they built feels alive. It anticipates user intent in ways we didn't think possible. This is the future of digital experience.",
-    author: "Elena Vos",
-    role: "Director of Product",
-    company: "NeuralLink",
+    quote: "They took our outdated website and turned it into something we're proud to show clients. The whole process was smooth and they actually listened to what we needed.",
+    author: "Rachel Martinez",
+    role: "Owner",
+    company: "Bloom Wellness Studio",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
     rating: 5
   },
   {
-    quote: "Nexa Studio doesn't just build websites; they architect digital ecosystems. A masterclass in spatial UI design that elevated our entire brand.",
-    author: "Dr. Aris Thorne",
-    role: "Lead Researcher",
-    company: "Quantum Systems",
+    quote: "Finally, a web team that delivers on time and on budget. Our new site looks amazing on mobile and we've seen a real increase in customer inquiries since launch.",
+    author: "James Wilson",
+    role: "Founder",
+    company: "Wilson & Co. Consulting",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
     rating: 5
   },
   {
-    quote: "We saw a 400% increase in engagement after the redesign. The 3D integration is seamless and the performance is absolutely phenomenal.",
+    quote: "As a small business owner, I was nervous about the investment. But they made it affordable and the results speak for themselves. Our bookings doubled in the first month.",
     author: "Sarah Chen",
-    role: "CTO",
-    company: "Future Corp",
+    role: "Director",
+    company: "Peak Fitness Academy",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
     rating: 5
   },
   {
-    quote: "Working with Nexa transformed our vision into reality. Their attention to detail and innovative approach sets them apart from any agency we've worked with.",
-    author: "Marcus Kim",
-    role: "Founder",
-    company: "Spatial Labs",
+    quote: "Professional, creative, and easy to work with. They understood our brand instantly and built exactly what we envisioned. Highly recommend for any startup.",
+    author: "Marcus Thompson",
+    role: "Co-Founder",
+    company: "GreenLeaf Foods",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
     rating: 5
   }
@@ -83,11 +83,11 @@ export default function TestimonialsPremium() {
           className="text-center mb-20"
         >
           <span className="text-purple-400 font-medium text-sm tracking-widest uppercase mb-4 block">
-            What They Say
+            Testimonials
           </span>
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter font-display">
-            Voices of
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> innovation</span>
+            What our
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> clients say</span>
           </h2>
         </motion.div>
 
@@ -164,11 +164,10 @@ export default function TestimonialsPremium() {
                   setIsAutoPlaying(false);
                   setActiveIndex(index);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? 'bg-purple-500 w-8'
-                    : 'bg-white/20 hover:bg-white/40'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex
+                  ? 'bg-purple-500 w-8'
+                  : 'bg-white/20 hover:bg-white/40'
+                  }`}
               />
             ))}
           </div>
